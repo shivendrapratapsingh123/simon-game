@@ -29,7 +29,7 @@ $(".btn").click(function () {
 
 function checkAnswer(currentLevel) {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-    console.log("Success");
+    //console.log("Success");
 
     if (userClickedPattern.length === gamePattern.length) {
       setTimeout(function () {
@@ -37,7 +37,7 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-    console.log("Wrong");
+   // console.log("Wrong");
 
     playSound("wrong");
 
@@ -47,13 +47,14 @@ function checkAnswer(currentLevel) {
     }, 200);
 
     $("#level-title").text("Game over, Press Any Key To Restart");
+    startOver();
   }
 
-  startOver();
+  
 }
 
 function nextSequence() {
-  userClickedPattern = [];
+   userClickedPattern = [];
 
   level++;
 
@@ -88,4 +89,5 @@ function startOver() {
   level = 0;
   gamePattern = [];
   started = false;
+ // userClickedPattern = [];
 }
